@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 var http = require('http');
 var url  = require('url');
+const PORT = process.env.PORT || 8888;
 
 http.createServer(function (req, res) {
   if (req.url == '/home'){
@@ -16,4 +17,4 @@ http.createServer(function (req, res) {
   res.writeHead(404, {'Content-Type': 'text/plain'});
   res.end('Page Not Found');
   }
-}).listen(8888);
+}).listen(PORT);
